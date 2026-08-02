@@ -15,8 +15,13 @@
 </head>
 <body>
 
-    <!-- Background Layer -->
-    <div class="background-container"></div>
+    <!-- Background Video Otomatis -->
+    <video autoplay muted loop playsinline class="background-video">
+        <!-- Ganti link/path ini dengan file video background prewedding client kamu -->
+        <source src="path-ke-video-background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="bg-overlay"></div>
 
     <!-- Halaman Cover Depan -->
     <div id="cover-screen">
@@ -28,101 +33,108 @@
         <button class="btn-outline" onclick="openInvitation()">OPEN INVITATION</button>
     </div>
 
-    <!-- Isi Undangan Utama -->
+    <!-- Kontainer Utama (Slide Otomatis Tanpa Scroll) -->
     <div class="app-container" id="main-content">
         
-        <!-- Quote Section -->
-        <section>
-            <p class="quote-text animate-on-scroll">"So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate."</p>
-            <p class="animate-on-scroll" style="font-size: 12px; letter-spacing: 2px;">Matthew 19 : 6</p>
-        </section>
+        <!-- SLIDE 1: Quote -->
+        <div class="slide active">
+            <div class="slide-content">
+                <p class="quote-text">"So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate."</p>
+                <p style="font-size: 12px; letter-spacing: 2px; margin-top: 15px;">Matthew 19 : 6</p>
+            </div>
+        </div>
 
-        <!-- Groom Profile -->
-        <section>
-            <h2 class="section-title serif animate-on-scroll">The Groom</h2>
-            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" class="profile-img animate-on-scroll" alt="Groom">
-            <h3 class="profile-name serif animate-on-scroll">Dino, S.T.</h3>
-            <div class="divider animate-on-scroll"></div>
-            <p class="parent-name animate-on-scroll">The Son of</p>
-            <p class="animate-on-scroll" style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
-        </section>
+        <!-- SLIDE 2: The Groom -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="section-title serif">The Groom</h2>
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" class="profile-img" alt="Groom">
+                <h3 class="profile-name serif">Dino, S.T.</h3>
+                <div class="divider"></div>
+                <p class="parent-name">The Son of</p>
+                <p style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
+            </div>
+        </div>
 
-        <!-- Bride Profile -->
-        <section>
-            <h2 class="section-title serif animate-on-scroll">The Bride</h2>
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" class="profile-img animate-on-scroll" alt="Bride">
-            <h3 class="profile-name serif animate-on-scroll">Elsa, S.I.Kom.</h3>
-            <div class="divider animate-on-scroll"></div>
-            <p class="parent-name animate-on-scroll">The Daughter of</p>
-            <p class="animate-on-scroll" style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
-        </section>
+        <!-- SLIDE 3: The Bride -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="section-title serif">The Bride</h2>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" class="profile-img" alt="Bride">
+                <h3 class="profile-name serif">Elsa, S.I.Kom.</h3>
+                <div class="divider"></div>
+                <p class="parent-name">The Daughter of</p>
+                <p style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
+            </div>
+        </div>
 
-        <!-- Event Details -->
-        <section>
-            <div class="event-details animate-on-scroll">
+        <!-- SLIDE 4: Holy Matrimony -->
+        <div class="slide">
+            <div class="slide-content">
                 <h3 class="event-title serif">HOLY MATRIMONY</h3>
                 <p class="event-date">FRIDAY, 25 DECEMBER 2026<br>09.00 — 11.00 WIB</p>
                 <p class="event-location">
                     <strong>Gereja / Gedung Akad</strong><br>
                     Jakarta Pusat, Daerah Khusus Ibukota Jakarta
                 </p>
-                <a href="#" class="btn-outline">Google Maps</a>
+                <a href="#" class="btn-outline" target="_blank">Google Maps</a>
             </div>
-            
-            <div class="divider animate-on-scroll"></div>
+        </div>
 
-            <div class="event-details animate-on-scroll">
+        <!-- SLIDE 5: Reception -->
+        <div class="slide">
+            <div class="slide-content">
                 <h3 class="event-title serif">RECEPTION</h3>
                 <p class="event-date">FRIDAY, 25 DECEMBER 2026<br>18.00 — 21.00 WIB</p>
                 <p class="event-location">
                     <strong>Hotel / Ballroom Resepsi</strong><br>
                     Jakarta Pusat, Daerah Khusus Ibukota Jakarta
                 </p>
-                <a href="#" class="btn-outline">Google Maps</a>
+                <a href="#" class="btn-outline" target="_blank">Google Maps</a>
             </div>
-        </section>
+        </div>
 
-        <!-- Video Prewedding -->
-        <section>
-            <h2 class="section-title serif animate-on-scroll">Prewedding Video</h2>
-            <div class="video-container animate-on-scroll">
-                <video controls poster="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop">
-                    <source src="path-ke-video-kamu.mp4" type="video/mp4">
-                    Browser kamu tidak mendukung pemutaran video.
-                </video>
+        <!-- SLIDE 6: Prewedding Video -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="section-title serif">Prewedding Video</h2>
+                <div class="video-container">
+                    <video controls poster="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop">
+                        <source src="path-ke-video-kamu.mp4" type="video/mp4">
+                        Browser kamu tidak mendukung pemutaran video.
+                    </video>
+                </div>
             </div>
-            <p class="quote-text animate-on-scroll" style="font-size: 20px;">"Happy marriages begin when we marry the ones we love..."</p>
-        </section>
+        </div>
 
-        <!-- Gallery -->
-        <section>
-            <h2 class="section-title serif animate-on-scroll">A Journey of<br>Dino & Elsa</h2>
-            <div class="gallery-grid animate-on-scroll">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400" alt="Gallery 1">
-                <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400" alt="Gallery 2">
-                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400" alt="Gallery 3">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400" alt="Gallery 4">
+        <!-- SLIDE 7: A Journey of Dino & Elsa -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="section-title serif">A Journey of<br>Dino & Elsa</h2>
+                <div class="gallery-grid">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400" alt="Gallery 1">
+                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400" alt="Gallery 2">
+                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400" alt="Gallery 3">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400" alt="Gallery 4">
+                </div>
             </div>
-        </section>
+        </div>
 
-        <!-- Digital Envelope -->
-        <section>
-            <h2 class="section-title serif animate-on-scroll">Wedding Gift</h2>
-            <p class="animate-on-scroll" style="font-size: 12px; margin-bottom: 20px; line-height: 1.6;">
-                Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun, apabila Anda ingin memberikan tanda kasih, dapat melalui fitur di bawah ini:
-            </p>
-            <div class="bank-details animate-on-scroll">
-                <strong>BCA</strong><br>
-                1234567890<br>
-                a.n. Dino
+        <!-- SLIDE 8: Wedding Gift -->
+        <div class="slide">
+            <div class="slide-content">
+                <h2 class="section-title serif">Wedding Gift</h2>
+                <p style="font-size: 11px; margin-bottom: 20px; line-height: 1.6;">
+                    Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun, apabila Anda ingin memberikan tanda kasih, dapat melalui fitur di bawah ini:
+                </p>
+                <div class="bank-details">
+                    <strong>BCA</strong><br>
+                    1234567890<br>
+                    a.n. Dino
+                </div>
+                <button class="btn-outline" onclick="copyToClipboard('1234567890')">Copy Rekening</button>
             </div>
-            <button class="btn-outline animate-on-scroll" onclick="copyToClipboard('1234567890')">Copy Rekening</button>
-        </section>
-
-        <!-- Footer -->
-        <section style="border: none;">
-            <p class="animate-on-scroll" style="font-size: 10px; color: #888;">Built with love for Dino & Elsa</p>
-        </section>
+        </div>
 
     </div>
 
