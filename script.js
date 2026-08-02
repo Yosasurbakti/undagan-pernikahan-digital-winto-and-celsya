@@ -1,49 +1,37 @@
-// --- FUNGSI ANIMASI SCROLL ---
-// Menggunakan Intersection Observer untuk mendeteksi kapan elemen terlihat di layar
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.15 // Animasi terpicu ketika 15% elemen sudah muncul di layar
-};
+let currentSlide = 0;
+let slides = [];
+let slideInterval = null;
 
-const scrollObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        // Jika elemen terlihat di layar
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            // Opsional: unobserve agar animasi hanya terjadi satu kali saat pertama kali di-scroll
-            // observer.unobserve(entry.target); 
-        } else {
-            // Hapus komentar pada baris di bawah ini jika kamu ingin 
-            // animasinya terjadi berkali-kali setiap di-scroll naik/turun
-            // entry.target.classList.remove('visible'); 
-        }
-    });
-}, observerOptions);
-
-// Fungsi untuk mengaktifkan pemantauan pada semua elemen yang memiliki class 'animate-on-scroll'
-function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.animate-on-scroll');
-    animatedElements.forEach(el => scrollObserver.observe(el));
-}
-
-
-// --- FUNGSI UNDANGAN ---
 function openInvitation() {
-    // Menyembunyikan layar cover
+    // Sembunyikan cover depan
     document.getElementById('cover-screen').style.display = 'none';
     
-    // Menampilkan konten utama undangan
-    document.getElementById('main-content').style.display = 'block';
+    // Tampilkan container utama
+    const mainContent = document.getElementById('main-content');
+    mainContent.style.display = 'block';
     
-    // Memastikan scroll berada di paling atas saat undangan dibuka
-    window.scrollTo(0, 0);
+    // Ambil semua elemen slide
+    slides = document.querySelectorAll('.slide');
     
-    // Menjalankan fungsi animasi setelah cover dihilangkan
-    // Diberi jeda 100ms agar elemen HTML sempat dirender oleh browser
-    setTimeout(() => {
-        initScrollAnimations();
-    }, 100);
+    if (slides.length > 0) {
+        slides[0].classList.add('active');
+        
+        // Ganti slide secara otomatis setiap 15 detik (bisa diatur, di bawah 20 detik)
+        slideInterval = setInterval(nextSlide, 15000);
+    }
+}
+
+function nextSlide() {
+    if (slides.length === 0) return;
+    
+    // Hilangkan kelas active dari slide saat ini
+    slides[currentSlide].classList.remove('active');
+    
+    // Pindah ke slide berikutnya (jika habis, kembali ke slide 0)
+    currentSlide = (currentSlide + 1) % slides.length;
+    
+    // Tampilkan slide baru
+    slides[currentSlide].classList.add('active');
 }
 
 function copyToClipboard(text) {
