@@ -3,7 +3,7 @@ let slides = document.querySelectorAll('.slide');
 
 // Jalankan otomatis setiap 15 detik (di bawah 20 detik sesuai permintaan)
 if (slides.length > 0) {
-    setInterval(nextSlide, 15000); 
+    setInterval(nextSlide, 5000); 
 }
 
 function nextSlide() {
