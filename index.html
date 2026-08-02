@@ -8,137 +8,89 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Great+Vibes&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     
-    <!-- Panggil File CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Background Video Otomatis -->
-    <video autoplay muted loop playsinline class="background-video">
-        <!-- Ganti link/path ini dengan file video background prewedding client kamu -->
-        <source src="path-ke-video-background.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+    <!-- Latar Belakang Desktop (Video yang di-blur) -->
+    <!-- PENTING: Ganti tulisan 'video-kamu.mp4' dengan link/nama file video prewedding client-mu -->
+    <video autoplay muted loop playsinline class="bg-desktop">
+        <source src="video-kamu.mp4" type="video/mp4">
     </video>
-    <div class="bg-overlay"></div>
 
-    <!-- Halaman Cover Depan -->
-    <div id="cover-screen">
-        <h3 class="serif" style="font-size: 14px; margin-bottom: 10px; letter-spacing: 3px;">THE WEDDING OF</h3>
-        <h1 class="serif" style="font-size: 32px;">DINO & ELSA</h1>
-        <div class="divider"></div>
-        <p style="font-size: 12px; margin-bottom: 5px;">Dear,</p>
-        <p style="font-size: 16px; margin-bottom: 30px; font-weight: 600;">Family & Friends</p>
-        <button class="btn-outline" onclick="openInvitation()">OPEN INVITATION</button>
-    </div>
-
-    <!-- Kontainer Utama (Slide Otomatis Tanpa Scroll) -->
-    <div class="app-container" id="main-content">
+    <!-- Bingkai Undangan (Ukuran HP di tengah layar) -->
+    <div class="mobile-frame" id="main-content">
         
-        <!-- SLIDE 1: Quote -->
+        <!-- Video Latar Belakang di dalam Bingkai (Jelas) -->
+        <video autoplay muted loop playsinline class="bg-mobile">
+            <source src="video-kamu.mp4" type="video/mp4">
+        </video>
+        <!-- Lapisan gelap transparan agar teks terbaca -->
+        <div class="dark-overlay"></div>
+
+        <!-- SLIDE 1: Persis seperti "web bagus 2_3.jpg" -->
         <div class="slide active">
-            <div class="slide-content">
-                <p class="quote-text">"So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate."</p>
-                <p style="font-size: 12px; letter-spacing: 2px; margin-top: 15px;">Matthew 19 : 6</p>
-            </div>
+            <p class="subtitle">THE WEDDING OF</p>
+            <h1 class="title">DINO & ELSA</h1>
+            <div class="line-divider"></div>
+            <p class="quote">So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.</p>
+            <p class="verse">Matthew 19 : 6</p>
         </div>
 
         <!-- SLIDE 2: The Groom -->
         <div class="slide">
-            <div class="slide-content">
-                <h2 class="section-title serif">The Groom</h2>
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=600&auto=format&fit=crop" class="profile-img" alt="Groom">
-                <h3 class="profile-name serif">Dino, S.T.</h3>
-                <div class="divider"></div>
-                <p class="parent-name">The Son of</p>
-                <p style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
-            </div>
+            <p class="subtitle">THE GROOM</p>
+            <h1 class="title" style="font-size: 26px;">DINO, S.T.</h1>
+            <div class="line-divider" style="width: 40%;"></div>
+            <p class="verse">The Son of</p>
+            <p class="verse" style="font-size: 12px; margin-top: 5px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
         </div>
 
         <!-- SLIDE 3: The Bride -->
         <div class="slide">
-            <div class="slide-content">
-                <h2 class="section-title serif">The Bride</h2>
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" class="profile-img" alt="Bride">
-                <h3 class="profile-name serif">Elsa, S.I.Kom.</h3>
-                <div class="divider"></div>
-                <p class="parent-name">The Daughter of</p>
-                <p style="font-size: 12px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
-            </div>
+            <p class="subtitle">THE BRIDE</p>
+            <h1 class="title" style="font-size: 26px;">ELSA, S.I.Kom.</h1>
+            <div class="line-divider" style="width: 40%;"></div>
+            <p class="verse">The Daughter of</p>
+            <p class="verse" style="font-size: 12px; margin-top: 5px;">Mr. [Nama Ayah] & Mrs. [Nama Ibu]</p>
         </div>
-
+        
         <!-- SLIDE 4: Holy Matrimony -->
         <div class="slide">
-            <div class="slide-content">
-                <h3 class="event-title serif">HOLY MATRIMONY</h3>
-                <p class="event-date">FRIDAY, 25 DECEMBER 2026<br>09.00 — 11.00 WIB</p>
-                <p class="event-location">
-                    <strong>Gereja / Gedung Akad</strong><br>
-                    Jakarta Pusat, Daerah Khusus Ibukota Jakarta
-                </p>
-                <a href="#" class="btn-outline" target="_blank">Google Maps</a>
-            </div>
+            <h1 class="title" style="font-size: 22px;">HOLY MATRIMONY</h1>
+            <p class="verse" style="margin: 15px 0;">FRIDAY, 25 DECEMBER 2026<br>09.00 — 11.00 WIB</p>
+            <p class="verse" style="font-size: 12px; line-height: 1.8;">
+                <strong>Gereja / Gedung Akad</strong><br>
+                Jakarta Pusat, DKI Jakarta
+            </p>
         </div>
 
         <!-- SLIDE 5: Reception -->
         <div class="slide">
-            <div class="slide-content">
-                <h3 class="event-title serif">RECEPTION</h3>
-                <p class="event-date">FRIDAY, 25 DECEMBER 2026<br>18.00 — 21.00 WIB</p>
-                <p class="event-location">
-                    <strong>Hotel / Ballroom Resepsi</strong><br>
-                    Jakarta Pusat, Daerah Khusus Ibukota Jakarta
-                </p>
-                <a href="#" class="btn-outline" target="_blank">Google Maps</a>
-            </div>
+            <h1 class="title" style="font-size: 22px;">RECEPTION</h1>
+            <p class="verse" style="margin: 15px 0;">FRIDAY, 25 DECEMBER 2026<br>18.00 — 21.00 WIB</p>
+            <p class="verse" style="font-size: 12px; line-height: 1.8;">
+                <strong>Hotel / Ballroom Resepsi</strong><br>
+                Jakarta Pusat, DKI Jakarta
+            </p>
         </div>
 
-        <!-- SLIDE 6: Prewedding Video -->
+        <!-- SLIDE 6: Wedding Gift (Seperti Sampah.jpg tapi layout diperbaiki) -->
         <div class="slide">
-            <div class="slide-content">
-                <h2 class="section-title serif">Prewedding Video</h2>
-                <div class="video-container">
-                    <video controls poster="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop">
-                        <source src="path-ke-video-kamu.mp4" type="video/mp4">
-                        Browser kamu tidak mendukung pemutaran video.
-                    </video>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 7: A Journey of Dino & Elsa -->
-        <div class="slide">
-            <div class="slide-content">
-                <h2 class="section-title serif">A Journey of<br>Dino & Elsa</h2>
-                <div class="gallery-grid">
-                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=400" alt="Gallery 1">
-                    <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400" alt="Gallery 2">
-                    <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?w=400" alt="Gallery 3">
-                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400" alt="Gallery 4">
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE 8: Wedding Gift -->
-        <div class="slide">
-            <div class="slide-content">
-                <h2 class="section-title serif">Wedding Gift</h2>
-                <p style="font-size: 11px; margin-bottom: 20px; line-height: 1.6;">
-                    Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun, apabila Anda ingin memberikan tanda kasih, dapat melalui fitur di bawah ini:
-                </p>
-                <div class="bank-details">
-                    <strong>BCA</strong><br>
-                    1234567890<br>
-                    a.n. Dino
-                </div>
-                <button class="btn-outline" onclick="copyToClipboard('1234567890')">Copy Rekening</button>
-            </div>
+            <h1 class="title" style="font-size: 22px; margin-bottom: 25px;">WEDDING GIFT</h1>
+            <p class="verse" style="font-size: 11px; line-height: 1.8; margin-bottom: 30px; padding: 0 10px;">
+                Kehadiran dan doa restu Bapak/Ibu/Saudara/i merupakan hadiah terindah bagi kami. Namun, apabila Anda ingin memberikan tanda kasih, dapat melalui fitur di bawah ini:
+            </p>
+            <p class="title" style="font-size: 16px;">BCA</p>
+            <p class="title" style="font-size: 18px; margin: 5px 0;">1234567890</p>
+            <p class="verse" style="margin-bottom: 25px;">a.n. Dino</p>
+            <button class="btn-copy" onclick="copyToClipboard('1234567890')">COPY REKENING</button>
         </div>
 
     </div>
 
-    <!-- Panggil File JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
