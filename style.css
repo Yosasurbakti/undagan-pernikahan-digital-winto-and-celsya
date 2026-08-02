@@ -23,7 +23,6 @@ h1, h2, h3, h4, .serif {
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* Ganti URL ini dengan path foto background kamu */
     background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2000&auto=format&fit=crop'); 
     background-size: cover;
     background-position: center;
@@ -33,14 +32,14 @@ h1, h2, h3, h4, .serif {
 
 /* === MAIN CONTENT WRAPPER === */
 .app-container {
-    max-width: 480px; /* Ukuran mobile/elegan */
+    max-width: 480px; 
     margin: 0 auto;
-    background-color: rgba(20, 20, 20, 0.75); /* Overlay gelap */
+    background-color: rgba(20, 20, 20, 0.75); 
     min-height: 100vh;
     position: relative;
     z-index: 1;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    display: none; /* Disembunyikan sebelum tombol Open Invitation diklik */
+    display: none; 
 }
 
 /* === COVER SCREEN === */
@@ -174,4 +173,23 @@ section {
     font-size: 14px;
     line-height: 1.8;
     margin-bottom: 15px;
+}
+
+
+/* ========================================= */
+/*             ANIMASI SCROLL                */
+/* ========================================= */
+
+/* Keadaan awal sebelum elemen masuk ke layar */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px); /* Geser ke bawah 40px */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Durasi 1 detik agar elegan */
+    will-change: opacity, transform;
+}
+
+/* Keadaan setelah elemen masuk ke layar */
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi semula */
 }
