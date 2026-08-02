@@ -15,8 +15,8 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* === Latar Belakang Layar Penuh (Desktop/Laptop) === */
-.bg-desktop {
+/* === Latar Belakang Layar Penuh (Berupa Foto) === */
+.bg-desktop-photo {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -25,7 +25,7 @@ body {
     transform: translate(-50%, -50%);
     object-fit: cover;
     z-index: -2;
-    filter: blur(15px) brightness(0.3); /* Membuat efek blur di luar bingkai */
+    filter: blur(8px) brightness(0.4); /* Efek blur pada foto luar, bisa angkanya dikecilkan jika ingin lebih jelas */
 }
 
 /* === Bingkai HP di Tengah Layar === */
