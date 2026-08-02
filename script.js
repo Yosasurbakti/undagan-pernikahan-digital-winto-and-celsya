@@ -17,7 +17,7 @@ function openInvitation() {
         slides[0].classList.add('active');
         
         // Ganti slide secara otomatis setiap 15 detik (bisa diatur, di bawah 20 detik)
-        slideInterval = setInterval(nextSlide, 15000);
+        slideInterval = setInterval(nextSlide, 5000);
     }
 }
 
