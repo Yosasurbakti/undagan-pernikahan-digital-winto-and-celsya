@@ -229,7 +229,7 @@ body {
 .groom-img {
     width: 200px;
     height: 200px;
-    object-fit: cover;
-    margin: 0 auto;
-    top: 10;
+    object-fit: contain;   /* gambar utuh, tidak dipotong */
+    border-radius: 12px;   /* bentuk bulat penuh (50%) kurang cocok dipakai bareng "contain", karena background di sudut jadi kelihatan kosong */
+    margin: 10px auto 0;   /* atur jarak dari atas */
 }
