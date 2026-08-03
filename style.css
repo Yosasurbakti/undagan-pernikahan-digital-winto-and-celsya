@@ -151,3 +151,78 @@ body {
     background: #fff;
     color: #000;
 }
+/* === FOTO PROFIL (Groom, Bride, Couple) === */
+.profile-img {
+    width: 85%;
+    aspect-ratio: 4/5; /* Membuat foto sedikit memanjang/potret elegan */
+    object-fit: cover;
+    margin: 15px 0;
+}
+
+/* === TEKS BERSAMBUNG & GARIS === */
+.parent-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 85%;
+    margin: 15px auto 10px auto;
+}
+.cursive-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    color: #fff;
+    white-space: nowrap;
+}
+.parent-row .line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+    flex-grow: 1; /* Garis otomatis memanjang ke kanan */
+}
+
+/* === TOMBOL INSTAGRAM === */
+.btn-ig {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: transparent;
+    color: #fff;
+    padding: 8px 18px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.btn-ig:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* === GALERI 8 FOTO === */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 90%;
+    /* Mengaktifkan scroll jika foto mentok ke bawah layar HP */
+    max-height: 55vh; 
+    overflow-y: auto; 
+    padding-right: 5px; 
+}
+.gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+}
+/* Mempercantik tampilan garis scroll (Scrollbar) di dalam galeri */
+.gallery-grid::-webkit-scrollbar {
+    width: 4px;
+}
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
