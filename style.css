@@ -77,7 +77,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100;
+    width: 100%; /* PERBAIKAN: Menambahkan lambang % agar terbaca oleh sistem */
+    height: 100%; /* TAMBAHAN: Menjamin semua teks dan foto benar-benar berada di tengah atas ke bawah */
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -95,7 +96,7 @@ body {
     visibility: visible;
 }
 
-/* === TIPOGRAFI PERSIS SEPERTI GAMBAR "web bagus 2_3.jpg" === */
+/* === TIPOGRAFI === */
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -133,7 +134,7 @@ body {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* === TOMBOL === */
+/* === TOMBOL COPY === */
 .btn-copy {
     background: transparent;
     border: 1px solid #fff;
@@ -150,6 +151,7 @@ body {
     background: #fff;
     color: #000;
 }
+
 /* === FOTO PROFIL (Groom, Bride, Couple) === */
 .profile-img {
     width: 85%;
@@ -226,10 +228,11 @@ body {
     border-radius: 10px;
 }
 
+/* === FOTO KHUSUS GROOM === */
 .groom-img {
     width: 85%;
-    aspect-ratio: 4/5;      /* tetap potret elegan, konsisten sama foto lain */
-    object-fit: contain;    /* gambar utuh, TIDAK dipotong/crop */
-    background-color: transparent; /* biar ruang kosong (kalau ada) tidak terlihat kotak */
-    margin: 25px auto 15px; /* atur jarak dari atas di sini */
+    aspect-ratio: 4/5;      /* Tetap potret elegan, konsisten dengan foto lain */
+    object-fit: contain;    /* Gambar utuh, TIDAK dipotong/crop */
+    background-color: transparent; /* Biar ruang kosong tidak terlihat kotak */
+    margin: 25px auto 15px; /* Atur jarak dari atas di sini */
 }
