@@ -77,8 +77,8 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%; /* PERBAIKAN: Menambahkan lambang % agar terbaca oleh sistem */
-    height: 100%; /* TAMBAHAN: Menjamin semua teks dan foto benar-benar berada di tengah atas ke bawah */
+    width: 100%;
+    height: 100%; 
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -155,8 +155,9 @@ body {
 /* === FOTO PROFIL (Groom, Bride, Couple) === */
 .profile-img {
     width: 85%;
-    aspect-ratio: 4/5; /* Membuat foto sedikit memanjang/potret elegan */
+    aspect-ratio: 4/5; 
     object-fit: cover;
+    object-position: top; /* PERBAIKAN: Fokus potongan ke atas agar kepala utuh */
     margin: 15px 0;
 }
 
@@ -231,8 +232,8 @@ body {
 /* === FOTO KHUSUS GROOM === */
 .groom-img {
     width: 85%;
-    aspect-ratio: 4/5;      /* Tetap potret elegan, konsisten dengan foto lain */
-    object-fit: contain;    /* Gambar utuh, TIDAK dipotong/crop */
-    background-color: transparent; /* Biar ruang kosong tidak terlihat kotak */
-    margin: 25px auto 15px; /* Atur jarak dari atas di sini */
+    aspect-ratio: 4/5;      
+    object-fit: contain;    
+    background-color: transparent; 
+    margin: 25px auto 15px; 
 }
