@@ -227,9 +227,9 @@ body {
 }
 
 .groom-img {
-    width: 200px;
-    height: 200px;
-    object-fit: contain;   /* gambar utuh, tidak dipotong */
-    border-radius: 12px;   /* bentuk bulat penuh (50%) kurang cocok dipakai bareng "contain", karena background di sudut jadi kelihatan kosong */
-    margin: 10px auto 0;   /* atur jarak dari atas */
+    width: 85%;
+    aspect-ratio: 4/5;      /* tetap potret elegan, konsisten sama foto lain */
+    object-fit: contain;    /* gambar utuh, TIDAK dipotong/crop */
+    background-color: transparent; /* biar ruang kosong (kalau ada) tidak terlihat kotak */
+    margin: 25px auto 15px; /* atur jarak dari atas di sini */
 }
