@@ -163,11 +163,13 @@ body {
 
 /* === FOTO PROFIL (Groom, Bride, Couple) === */
 .profile-img {
-    width: 85%;
-    aspect-ratio: 4/5; 
+    width: 72%;
+    aspect-ratio: 4/5;
+    max-height: 42vh;       /* kunci utama: batasi tinggi biar tidak "meledak" di layar sempit-tinggi */
     object-fit: cover;
     object-position: top; /* PERBAIKAN: Fokus potongan ke atas agar kepala utuh */
-    margin: 15px 0;
+    margin: 20px auto;
+    border-radius: 2px;
 }
 
 /* === TEKS BERSAMBUNG & GARIS === */
