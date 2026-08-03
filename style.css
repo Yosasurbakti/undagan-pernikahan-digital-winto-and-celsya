@@ -32,13 +32,22 @@ body {
 .mobile-frame {
     position: relative;
     width: 100%;
-    max-width: 420px;
-    height: 100vh;
+    height: 100vh; /* Langsung penuhi tinggi layar */
     overflow: hidden;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Membuat bingkai melengkung elegan JIKA dibuka di Layar Lebar (Laptop/Tablet) */
+@media (min-width: 768px) {
+    .mobile-frame {
+        max-width: 420px; /* Batas lebar ini HANYA aktif di laptop/tablet */
+        height: 90vh;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    }
 }
 
 /* Membuat bingkai melengkung elegan jika dibuka di Desktop */
