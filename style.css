@@ -19,21 +19,23 @@ body {
     position: relative;
 }
 
-/* ============================================================
-   2. Latar Belakang Blur (Full Screen)
-   PERUBAHAN: Dari .bg-desktop-photo menjadi .bg-blurred
-   ============================================================ */
-.bg-blurred {
+/* === Latar Belakang (Full Screen) Tanpa Blur === */
+.bg-blurred, .bg-desktop-photo {
     position: fixed;
-    top: 0%; /* Sedikit keluar area biar blur di pinggir rapi */
-    left: 0%;
-    width: 110%;
-    height: 110%;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background-size: cover;
     background-position: center;
-    /* Efek Blur dan Kegelapan (Frosted Glass Effect) */
+    object-fit: cover;
+    
+    /* Efek blur dihapus sepenuhnya. 
+       Hanya disisakan brightness untuk menggelapkan foto sedikit 
+       agar kartu undangan tetap menjadi fokus utama. */
     filter: brightness(0.4); 
-    z-index: -2; /* Berada di paling belakang */
+    
+    z-index: -2;
 }
 
 /* ============================================================
