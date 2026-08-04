@@ -13,9 +13,11 @@
 </head>
 <body>
 
-    <img src="images/sampel .jpg" class="bg-desktop-photo" alt="Background Desktop">
+    <!-- Latar belakang layar penuh dengan efek blur (Menggantikan img desktop lama) -->
+    <div class="bg-blurred" style="background-image: url('images/sampel .jpg');"></div>
 
-    <div class="mobile-frame" id="main-content">
+    <!-- Wadah kartu melayang di tengah layar (Menggantikan mobile-frame) -->
+    <div class="card-container" id="main-content">
         
         <video autoplay muted loop playsinline class="bg-mobile">
             <source src="images/videoprewed.mp4" type="video/mp4">
