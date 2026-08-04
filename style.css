@@ -20,22 +20,21 @@ body {
 }
 
 /* ============================================================
-   2. Latar Belakang Blur (Full Screen)
-   PERUBAHAN: Dari .bg-desktop-photo menjadi .bg-blurred
+/* ============================================================
+   2. Latar Belakang (Full Screen)
    ============================================================ */
 .bg-blurred {
     position: fixed;
-    top: -5%; /* Sedikit keluar area biar blur di pinggir rapi */
-    left: -5%;
-    width: 110%;
-    height: 110%;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    /* Efek Blur dan Kegelapan (Frosted Glass Effect) */
-    filter: blur(15px) brightness(0.3); 
-    z-index: -2; /* Berada di paling belakang */
+    /* Efek blur dihapus, hanya menyisakan sedikit efek gelap */
+    filter: brightness(0.4); 
+    z-index: -2;
 }
-
 /* ============================================================
    3. Kartu Konten Mengambang (Utama)
    PERUBAHAN: Dari .mobile-frame menjadi .card-container
