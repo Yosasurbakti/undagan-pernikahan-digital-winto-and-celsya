@@ -25,8 +25,8 @@ body {
    ============================================================ */
 .bg-blurred {
     position: fixed;
-    top: -5%; /* Sedikit keluar area biar blur di pinggir rapi */
-    left: -5%;
+    top: 1%; /* Sedikit keluar area biar blur di pinggir rapi */
+    left: 1%;
     width: 110%;
     height: 110%;
     background-size: cover;
