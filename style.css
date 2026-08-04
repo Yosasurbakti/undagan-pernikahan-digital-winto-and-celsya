@@ -1,3 +1,6 @@
+/* ============================================================
+   1. Reset & Dasar Latar Belakang (Body)
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -5,61 +8,69 @@
 }
 
 body {
-    background-color: #050505;
+    background-color: #050505; /* Warna dasar hitam jika gambar gagal muat */
     color: #ffffff;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Memusatkan kartu secara horizontal */
+    align-items: center;     /* Memusatkan kartu secara vertikal */
     height: 100vh;
-    overflow: hidden;
+    overflow: hidden;        /* Mencegah scroll pada body utama */
     font-family: 'Montserrat', sans-serif;
-}
-
-/* === Latar Belakang Layar Penuh (Berupa Foto) === */
-.bg-desktop-photo {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100vw;
-    min-height: 100vh;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: -2;
-    filter: blur(8px) brightness(0.4); 
-}
-
-/* === Bingkai HP di Tengah Layar === */
-.mobile-frame {
     position: relative;
-    width: 100%;
-    height: 100vh; /* Langsung penuhi tinggi layar */
-    overflow: hidden;
+}
+
+/* ============================================================
+   2. Latar Belakang Blur (Full Screen)
+   PERUBAHAN: Dari .bg-desktop-photo menjadi .bg-blurred
+   ============================================================ */
+.bg-blurred {
+    position: fixed;
+    top: -5%; /* Sedikit keluar area biar blur di pinggir rapi */
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background-size: cover;
+    background-position: center;
+    /* Efek Blur dan Kegelapan (Frosted Glass Effect) */
+    filter: blur(15px) brightness(0.3); 
+    z-index: -2; /* Berada di paling belakang */
+}
+
+/* ============================================================
+   3. Kartu Konten Mengambang (Utama)
+   PERUBAHAN: Dari .mobile-frame menjadi .card-container
+   ============================================================ */
+.card-container {
+    position: relative;
+    z-index: 1; /* Berada di atas latar belakang blur */
+    
+    /* Ukuran Kartu: Menyisakan ruang di HP agar tidak mentok */
+    width: 90%; 
+    max-width: 420px; /* Lebar maksimal di tablet/desktop */
+    height: 85vh;     /* Tinggi 85% dari layar, menyisakan jarak atas-bawah */
+    max-height: 800px; /* Batas tinggi maksimal */
+
+    /* Desain Kartu */
+    border-radius: 12px; /* Sudut melengkung elegan */
+    background-color: rgba(20, 20, 20, 0.3); /* Warna kartu semi-transparan */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8); /* Bayangan agar terlihat mengambang */
+    
+    /* Mengunci konten di dalam */
+    overflow: hidden; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Membuat bingkai melengkung elegan JIKA dibuka di Layar Lebar (Laptop/Tablet) */
-@media (min-width: 768px) {
-    .mobile-frame {
-        max-width: 420px; /* Batas lebar ini HANYA aktif di laptop/tablet */
-        height: 90vh;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-    }
+/* Mengunci video di dalam bingkai melengkung */
+.card-container .bg-mobile {
+    border-radius: 12px;
 }
 
-/* Membuat bingkai melengkung elegan jika dibuka di Desktop */
-@media (min-width: 768px) {
-    .mobile-frame {
-        height: 90vh;
-        border-radius: 15px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-}
-
-/* === Video Jelas di Dalam Bingkai === */
+/* ============================================================
+   4. Konten di Dalam Kartu (Video, Video Overlay)
+   ============================================================ */
+/* Video Latar di dalam Kartu */
 .bg-mobile {
     position: absolute;
     top: 0;
@@ -81,7 +92,9 @@ body {
     z-index: 0;
 }
 
-/* === SLIDE SISTEM === */
+/* ============================================================
+   5. Sistem Slide (Tetap Sama)
+   ============================================================ */
 .slide {
     position: absolute;
     top: 0;
@@ -105,7 +118,9 @@ body {
     visibility: visible;
 }
 
-/* === TIPOGRAFI === */
+/* ============================================================
+   6. Tipografi (Tetap Sama)
+   ============================================================ */
 .subtitle {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -143,7 +158,9 @@ body {
     color: rgba(255, 255, 255, 0.85);
 }
 
-/* === TOMBOL COPY === */
+/* ============================================================
+   7. Tombol-Tombol (Tetap Sama)
+   ============================================================ */
 .btn-copy {
     background: transparent;
     border: 1px solid #fff;
@@ -161,39 +178,6 @@ body {
     color: #000;
 }
 
-/* === FOTO PROFIL (Groom, Bride, Couple) === */
-.profile-img {
-    width: 72%;
-    aspect-ratio: 4/5;
-    max-height: 42vh;       /* kunci utama: batasi tinggi biar tidak "meledak" di layar sempit-tinggi */
-    object-fit: cover;
-    object-position: top; /* PERBAIKAN: Fokus potongan ke atas agar kepala utuh */
-    margin: 20px auto;
-    border-radius: 2px;
-}
-
-/* === TEKS BERSAMBUNG & GARIS === */
-.parent-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    width: 85%;
-    margin: 15px auto 10px auto;
-}
-.cursive-text {
-    font-family: 'Great Vibes', cursive;
-    font-size: 22px;
-    color: #fff;
-    white-space: nowrap;
-}
-.parent-row .line {
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.7);
-    flex-grow: 1; /* Garis otomatis memanjang ke kanan */
-}
-
-/* === TOMBOL INSTAGRAM === */
 .btn-ig {
     display: inline-flex;
     align-items: center;
@@ -210,37 +194,77 @@ body {
     margin-top: 20px;
     transition: 0.3s;
 }
+
 .btn-ig:hover {
     background: #fff;
     color: #000;
 }
 
-/* === GALERI 8 FOTO === */
+/* ============================================================
+   8. Gambar, Layout Mempelai & Galeri (Tetap Sama)
+   ============================================================ */
+/* Foto Profil (Groom, Bride, Couple) - Opsi 1: Kepala Utuh */
+.profile-img {
+    width: 72%;
+    aspect-ratio: 4/5;
+    max-height: 42vh; /* Membatasi tinggi agar tidak terlalu besar di layar pendek */
+    object-fit: cover;
+    object-position: top; /* Fokus potongan ke atas agar kepala utuh */
+    margin: 20px auto;
+    border-radius: 2px;
+}
+
+/* Teks "The Son of / The Daughter of" dengan Garis */
+.parent-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 85%;
+    margin: 15px auto 10px auto;
+}
+
+.cursive-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.parent-row .line {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.7);
+    flex-grow: 1; /* Garis otomatis memanjang ke kanan */
+}
+
+/* Galeri 8 Foto dengan Scroll */
 .gallery-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
     width: 90%;
-    /* Mengaktifkan scroll jika foto mentok ke bawah layar HP */
-    max-height: 55vh; 
+    max-height: 55vh; /* Mengaktifkan scroll jika foto mentok ke bawah */
     overflow-y: auto; 
     padding-right: 5px; 
 }
+
 .gallery-grid img {
     width: 100%;
     aspect-ratio: 4/5;
     object-fit: cover;
 }
-/* Mempercantik tampilan garis scroll (Scrollbar) di dalam galeri */
+
+/* Perbaikan Scrollbar Galeri */
 .gallery-grid::-webkit-scrollbar {
     width: 4px;
 }
+
 .gallery-grid::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
 }
 
-/* === FOTO KHUSUS GROOM === */
+/* Foto Khusus Groom (jika pakai contain) */
 .groom-img {
     width: 85%;
     aspect-ratio: 4/5;      
